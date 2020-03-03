@@ -40,9 +40,10 @@ router.post('/signin', function(req, res) {
         if (isMatch && !err) {
           // if user is found and password is right create a token
           let token = jwt.sign(user.toJSON(), config.secret, {
-            expiresIn: 604800 // 1 week
+            expiresIn: 60 // 1 min
           });
           // return the information including token as JSON
+          res.cookie('jwt',token);
           res.json({success: true, token: 'JWT ' + token});
         } else {
           res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
