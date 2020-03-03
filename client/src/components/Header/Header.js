@@ -5,18 +5,32 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link, Route } from 'react-router-dom';
 
 class Header extends Component {
-        constructor(props) {
+
+    constructor(props) {
             super(props);
             this.state = {
                 isAutorized : false
             };
-            // fetch('/api/signup', {
-            //
-            // }.then(res => res.json())
-            //     .then(data => console.log(data))
-            //     .catch(err => console.log("err: =" + err)));
+        let cookie = this.get_cookie('jwt');
+            fetch('/api/autorized', {
+                method: 'get',
+                headers: {
+                    token : cookie
+                }
+            }).then(
+                res => console.log(res.json()))
+                .then(data => console.log("data: = " + data))
+                .catch(err => console.log("err: = " + err));
         }
-
+    get_cookie ( cookie_name )
+    {
+        var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+        console.log('Cookie = '+results);
+        if ( results )
+            return ( unescape ( results[2] ) );
+        else
+            return null;
+    }
         render() {
             return (
                 <header className='header'>
@@ -66,6 +80,32 @@ class Header extends Component {
                                                 </li>
                                                 <li className="nav-item">
                                                     <Link to='/Market'><a className="nav-link active" href="#">Услуги</a></Link>
+                                                </li>
+                                            </ul>
+                                        </Route>
+                                        <Route exact path='/register'>
+                                            <ul className="nav nav-pills">
+                                                <li className="nav-item">
+                                                    <Link  to='/'> <a className="nav-link " href="#">О нас</a></Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link to='/Personal'><a className="nav-link" href="#">Личный кабиней</a></Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link to='/Market'><a className="nav-link" href="#">Услуги</a></Link>
+                                                </li>
+                                            </ul>
+                                        </Route>
+                                        <Route exact path='/auth'>
+                                            <ul className="nav nav-pills">
+                                                <li className="nav-item">
+                                                    <Link  to='/'> <a className="nav-link " href="#">О нас</a></Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link to='/Personal'><a className="nav-link" href="#">Личный кабиней</a></Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link to='/Market'><a className="nav-link" href="#">Услуги</a></Link>
                                                 </li>
                                             </ul>
                                         </Route>

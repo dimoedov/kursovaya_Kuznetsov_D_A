@@ -52,7 +52,7 @@ router.post('/signin', function(req, res) {
     }
   });
 });
-router.get('/autorized',passport.authenticate('jwt', { session: false}), function(req, res) {
+router.get('/auto',passport.authenticate('jwt', { session: false}), function(req, res) {
   let token = getToken(req.headers);
   if (token) {
     return res.status(200).send({success: true, msg: 'Authorized.'});

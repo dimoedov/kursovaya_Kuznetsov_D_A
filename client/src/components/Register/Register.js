@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import FormErrors from "../FormError/FormError"
+import Header from "../Header/Header";
 import './register.css';
 class Register extends Component {
     constructor(props) {
@@ -24,7 +25,6 @@ class Register extends Component {
         let fieldValidationErrors = this.state.formErrors;
         let usernameValid = this.state.usernameValid;
         let passwordValid = this.state.passwordValid;
-console.log(passwordValid);
         switch(fieldName) {
             case 'username':
                 usernameValid = /^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}$/.test(value);
