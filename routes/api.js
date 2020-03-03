@@ -1,18 +1,18 @@
-var mongoose = require('mongoose');
-var passport = require('passport');
-var config = require('../config/database');
+let mongoose = require('mongoose');
+let passport = require('passport');
+let config = require('../config/database');
 require('../config/passport')(passport);
-var express = require('express');
-var jwt = require('jsonwebtoken');
-var router = express.Router();
-var User = require("../models/user");
-var Book = require("../models/book");
+let express = require('express');
+let jwt = require('jsonwebtoken');
+let router = express.Router();
+let User = require("../models/user");
+let Book = require("../models/book");
 
 router.post('/signup', function(req, res) {
   if (!req.body.username || !req.body.password) {
     res.json({success: false, msg: 'Please pass username and password.'});
   } else {
-    var newUser = new User({
+    let newUser = new User({
       username: req.body.username,
       password: req.body.password
     });
@@ -39,7 +39,7 @@ router.post('/signin', function(req, res) {
       user.comparePassword(req.body.password, function (err, isMatch) {
         if (isMatch && !err) {
           // if user is found and password is right create a token
-          var token = jwt.sign(user.toJSON(), config.secret, {
+          let token = jwt.sign(user.toJSON(), config.secret, {
             expiresIn: 604800 // 1 week
           });
           // return the information including token as JSON
@@ -51,17 +51,24 @@ router.post('/signin', function(req, res) {
     }
   });
 });
-
+router.get('/autorized',passport.authenticate('jwt', { session: false}), function(req, res) {
+  let token = getToken(req.headers);
+  if (token) {
+    return res.status(200).send({success: true, msg: 'Authorized.'});
+  }else {
+    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+  }
+});
 router.get('/signout', passport.authenticate('jwt', { session: false}), function(req, res) {
   req.logout();
   res.json({success: true, msg: 'Sign out successfully.'});
 });
 
 router.post('/book', passport.authenticate('jwt', { session: false}), function(req, res) {
-  var token = getToken(req.headers);
+  let token = getToken(req.headers);
   if (token) {
     console.log(req.body);
-    var newBook = new Book({
+    let newBook = new Book({
       isbn: req.body.isbn,
       title: req.body.title,
       author: req.body.author,
@@ -80,7 +87,7 @@ router.post('/book', passport.authenticate('jwt', { session: false}), function(r
 });
 
 router.get('/book', passport.authenticate('jwt', { session: false}), function(req, res) {
-  var token = getToken(req.headers);
+  let token = getToken(req.headers);
   if (token) {
     Book.find(function (err, books) {
       if (err) return next(err);
@@ -93,7 +100,7 @@ router.get('/book', passport.authenticate('jwt', { session: false}), function(re
 
 getToken = function (headers) {
   if (headers && headers.authorization) {
-    var parted = headers.authorization.split(' ');
+    let parted = headers.authorization.split(' ');
     if (parted.length === 2) {
       return parted[1];
     } else {
