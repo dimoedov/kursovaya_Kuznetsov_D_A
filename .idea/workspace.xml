@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Register/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register/register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1583254744969" duration="3318000" />
       <workItem from="1583261103524" duration="1911000" />
       <workItem from="1583296390982" duration="4787000" />
-      <workItem from="1583334768679" duration="2810000" />
+      <workItem from="1583334768679" duration="8584000" />
     </task>
     <servers />
   </component>

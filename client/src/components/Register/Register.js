@@ -58,9 +58,9 @@ class Register extends Component {
 
         if (this.state.formValid) {
             let formBody = [];
-            for (var prop in this.state) {
-                var encodedKey = encodeURIComponent(prop);
-                var encodedValue = encodeURIComponent(this.state[prop]);
+            for (let prop in this.state) {
+                let encodedKey = encodeURIComponent(prop);
+                let encodedValue = encodeURIComponent(this.state[prop]);
                 formBody.push(encodedKey + "=" + encodedValue);
             }
             formBody = formBody.join("&");
@@ -96,14 +96,14 @@ class Register extends Component {
                                 <FormErrors formErrors={this.state.formErrors} />
                             </div>
                             <div className={`form-group ${this.errorClass(this.state.formErrors.username)}`}>
-                                <label htmlFor="username">Email address</label>
+                                <label htmlFor="username">Login:</label>
                                 <input type="username" required className="form-control" name="username"
                                        placeholder="username"
                                        value={this.state.username}
                                        onChange={this.handleUserInput}  />
                             </div>
                             <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password">Password:</label>
                                 <input type="password" required className="form-control" name="password"
                                        placeholder="Password"
                                        value={this.state.password}
