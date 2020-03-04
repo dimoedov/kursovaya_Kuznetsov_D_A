@@ -43,7 +43,7 @@ router.post('/signin', function(req, res) {
             expiresIn: 60 // 1 min
           });
           // return the information including token as JSON
-          res.cookie('jwt',token);
+          res.cookie('Authorized','JWT '+token);
           res.json({success: true, token: 'JWT ' + token});
         } else {
           res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
@@ -108,7 +108,7 @@ getToken = function (headers) {
       return null;
     }
   } else {
-    return null;
+      return null;
   }
 };
 

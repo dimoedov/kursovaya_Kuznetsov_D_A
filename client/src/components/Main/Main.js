@@ -10,8 +10,8 @@ function Main() {
         <main>
             <Switch>
                 <Route exact path='/' component={Home}/>
-                <Route exact path='/Auth' component={Auth}/>
-                <Route exact path='/Register' component={Register}/>
+                <Route path='/Auth' component={Auth}/>
+                <Route path='/Register' component={Register}/>
                 <Route path='/Personal' component={Personal}/>
                 <Route path='/Market' component={Market}/>
             </Switch>

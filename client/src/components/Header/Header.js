@@ -11,11 +11,19 @@ class Header extends Component {
             this.state = {
                 isAutorized : false
             };
-        let cookie = this.get_cookie('jwt');
-            fetch('/api/autorized', {
+        let cookie = '';
+        cookie = encodeURIComponent(cookie);
+            if (this.get_cookie('jwt') === ''){
+                cookie = encodeURIComponent('');
+            }else {
+                cookie = encodeURIComponent(this.get_cookie('jwt'));
+            }
+            fetch('/api/auto', {
                 method: 'get',
                 headers: {
-                    token : cookie
+                    Authorization : {
+                        jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTVkNDEyZTgzYjk5ZjIwOWNlMzcwZjUiLCJ1c2VybmFtZSI6IjEyMyIsInBhc3N3b3JkIjoiJDJhJDEwJGRFc0gySEUzQUVIRGNtNlU1SGd0THV4YWRyRlFoRzdSY3FQaHAydjFibFNub2xpWFZPeldpIiwiX192IjowLCJpYXQiOjE1ODMyNTc3MTcsImV4cCI6MTU4MzI1Nzc3N30.3832jmBdiJDCEWpA3z41GlB0c_0RcId2Gy5F3J1LuYk'
+                    }
                 }
             }).then(
                 res => console.log(res.json()))
@@ -113,10 +121,7 @@ class Header extends Component {
                                 </nav>
                             </div>
                             <div className="col-lg-2">
-                                <switch>
-
-                                </switch>
-                                <button type="button " className="flex-column btn btn-primary btn-lg btn-block">Войти</button>
+                                <Link  to='/Auth'><button type="button " className="flex-column btn btn-primary btn-lg btn-block">Войти</button></Link>
                             </div>
                         </div>
                     </div>

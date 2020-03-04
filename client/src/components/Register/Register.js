@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import FormErrors from "../FormError/FormError"
-import Header from "../Header/Header";
 import './register.css';
 class Register extends Component {
     constructor(props) {
@@ -80,26 +79,44 @@ class Register extends Component {
 
     render() {
         return (
-            <form className="form-horizontal" onSubmit={this.handleSubmit}>
-                <div className="panel panel-default">
-                    <FormErrors formErrors={this.state.formErrors} />
+            <div>
+                <div className="text-center">
+                    <h1> Регистарция:</h1>
                 </div>
-                <div className={`form-group ${this.errorClass(this.state.formErrors.username)}`}>
-                    <label htmlFor="username">Email address</label>
-                    <input type="username" required className="form-control" name="username"
-                           placeholder="username"
-                           value={this.state.username}
-                           onChange={this.handleUserInput}  />
+                <div>
+                    <form className="form-horizontal" onSubmit={this.handleSubmit}>
+                        <div className="panel panel-default">
+                            <FormErrors formErrors={this.state.formErrors} />
+                        </div>
+                        <div className={`form-group ${this.errorClass(this.state.formErrors.username)}`}>
+                            <label htmlFor="username">Email address</label>
+                            <input type="username" required className="form-control" name="username"
+                                   placeholder="username"
+                                   value={this.state.username}
+                                   onChange={this.handleUserInput}  />
+                        </div>
+                        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+                            <label htmlFor="password">Password</label>
+                            <input type="password" required className="form-control" name="password"
+                                   placeholder="Password"
+                                   value={this.state.password}
+                                   onChange={this.handleUserInput}  />
+                        </div>
+                        <input type="submit" className="btn btn-primary" onSubmit={this.handleSubmit} value='Отправить'/>
+                    </form>
                 </div>
-                <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" required className="form-control" name="password"
-                           placeholder="Password"
-                           value={this.state.password}
-                           onChange={this.handleUserInput}  />
+                <div className="register_text">
+                    <p className='text-info'>
+                        для регистрации:
+                        <li>укажите логин длинной от 5 символов</li>
+                        <li>укажите пароль как минимум с одной заглавной, <br/>
+                            одной прописной буквами и специальными символами <br/>
+                            длина паролья не меньше 8 символов
+                        </li>
+                    </p>
                 </div>
-                <input type="submit" className="btn btn-primary" onSubmit={this.handleSubmit} value='Отправить'/>
-            </form>
+            </div>
+
         );
     }
 }
