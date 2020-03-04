@@ -40,10 +40,12 @@ class Header extends Component {
             return null;
     }
         render() {
+
+        console.log(this.get_cookie('Authorized'));
             return (
-                <header className='header'>
+                <header className='header bg-secondary text-white'>
                     <div className="container">
-                        <div className="row">
+                        <div className="row" >
                             <div className="col-lg-2">
                                 <div className="header__tel">
                                     Курсовой проект сделал: Кузнецов Д.А.
@@ -55,65 +57,65 @@ class Header extends Component {
                                         <Route exact path='/'>
                                             <ul className="nav nav-pills">
                                                 <li className="nav-item">
-                                                    <Link  to='/'> <a className="nav-link active" href="#">О нас</a></Link>
+                                                    <Link  to='/'> <a className="nav-link text-white active" href="#">О нас</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Personal'><a className="nav-link" href="#">Личный кабиней</a></Link>
+                                                    <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Market'><a className="nav-link" href="#">Услуги</a></Link>
+                                                    <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
                                                 </li>
                                             </ul>
                                         </Route>
                                         <Route exact path='/Personal'>
                                             <ul className="nav nav-pills">
                                                 <li className="nav-item">
-                                                    <Link  to='/'> <a className="nav-link " href="#">О нас</a></Link>
+                                                    <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Personal'><a className="nav-link active" href="#">Личный кабиней</a></Link>
+                                                    <Link to='/Personal'><a className="nav-link text-white active" href="#">Личный кабиней</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Market'><a className="nav-link" href="#">Услуги</a></Link>
+                                                    <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
                                                 </li>
                                             </ul>
                                         </Route>
                                         <Route exact path='/Market'>
                                             <ul className="nav nav-pills">
                                                 <li className="nav-item">
-                                                    <Link  to='/'> <a className="nav-link " href="#">О нас</a></Link>
+                                                    <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Personal'><a className="nav-link" href="#">Личный кабиней</a></Link>
+                                                    <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Market'><a className="nav-link active" href="#">Услуги</a></Link>
+                                                    <Link to='/Market'><a className="nav-link active text-white" href="#">Услуги</a></Link>
                                                 </li>
                                             </ul>
                                         </Route>
                                         <Route exact path='/register'>
                                             <ul className="nav nav-pills">
                                                 <li className="nav-item">
-                                                    <Link  to='/'> <a className="nav-link " href="#">О нас</a></Link>
+                                                    <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Personal'><a className="nav-link" href="#">Личный кабиней</a></Link>
+                                                    <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Market'><a className="nav-link" href="#">Услуги</a></Link>
+                                                    <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
                                                 </li>
                                             </ul>
                                         </Route>
                                         <Route exact path='/auth'>
                                             <ul className="nav nav-pills">
                                                 <li className="nav-item">
-                                                    <Link  to='/'> <a className="nav-link " href="#">О нас</a></Link>
+                                                    <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Personal'><a className="nav-link" href="#">Личный кабиней</a></Link>
+                                                    <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <Link to='/Market'><a className="nav-link" href="#">Услуги</a></Link>
+                                                    <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
                                                 </li>
                                             </ul>
                                         </Route>
@@ -121,7 +123,7 @@ class Header extends Component {
                                 </nav>
                             </div>
                             <div className="col-lg-2">
-                                <Link  to='/Auth'><button type="button " className="flex-column btn btn-primary btn-lg btn-block">Войти</button></Link>
+                                <Link  to='/Auth'><button type="button " className="flex-column btn btn-primary btn-dark text-white btn-lg btn-block">Войти</button></Link>
                             </div>
                         </div>
                     </div>

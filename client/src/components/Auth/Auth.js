@@ -29,7 +29,7 @@ class Auth extends Component{
     };
     render() {
         return (
-            <div>
+            <div >
                 <div>
                     <h1 className='text-center text-dark'>Вход</h1>
                 </div>
@@ -49,11 +49,11 @@ class Auth extends Component{
                                    value={this.state.password}
                                    onChange={this.handleUserInput}  />
                         </div>
-                        <input type="submit" className="btn btn-primary" onSubmit={this.handleSubmit} value='Отправить'/>
+                        <input type="submit" className="btn btn-primary btn-dark" onSubmit={this.handleSubmit} value='Отправить'/>
                     </form>
                 </div>
                 <div className='text-center'>
-                    <Link className=''  to='/Register'> <a className="stretched-link" href="#">Нет аккаунта</a></Link>
+                    <Link  to='/Register'> <a href="#">Нет аккаунта</a></Link>
                 </div>
             </div>
 
