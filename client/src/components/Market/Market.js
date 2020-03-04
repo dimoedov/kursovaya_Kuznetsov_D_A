@@ -3,11 +3,6 @@ class Market extends Component{
     state = {
             users: [],
         };
-    componentDidMount() {
-        fetch('/api/')
-            .then(res => res.json())
-            .then(users => this.setState({ users }));
-    }
     render() {
         return (
             <div>

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
-
 import './index.css';
 import './App.css';
 import Header from './components/Header/Header';
@@ -17,5 +16,4 @@ ReactDOM.render(
      </BrowserRouter >),
     document.getElementById('root'));
 
-console.log(BrowserRouter);
 serviceWorker.unregister();

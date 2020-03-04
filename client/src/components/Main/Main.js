@@ -5,6 +5,7 @@ import Personal from '../Personal/Personal'
 import Market from '../Market/Market'
 import Auth from '../Auth/Auth'
 import Register from '../Register/Register'
+import Signout from "../Signout/Signout";
 function Main() {
     return (
         <main>
@@ -14,9 +15,9 @@ function Main() {
                 <Route path='/Register' component={Register}/>
                 <Route path='/Personal' component={Personal}/>
                 <Route path='/Market' component={Market}/>
+                <Route path='/Signout' component={Signout}/>
             </Switch>
         </main>
     );
 }
 export default Main;
-// надо добавить passport.js и настроить его

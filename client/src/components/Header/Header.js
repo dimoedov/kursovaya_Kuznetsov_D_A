@@ -5,31 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link, Route } from 'react-router-dom';
 
 class Header extends Component {
-
-    constructor(props) {
-            super(props);
-            this.state = {
-                isAutorized : false
-            };
-        // let cookie = '';
-        // cookie = encodeURIComponent(cookie);
-        //     if (this.get_cookie('') === ''){
-        //         cookie = encodeURIComponent('');
-        //     }else {
-        //         cookie = encodeURIComponent(this.get_cookie('jwt'));
-        //     }
-            // fetch('/api/auto', {
-            //     method: 'get',
-            //     headers: {
-            //         Authorization : {
-            //             jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTVkNDEyZTgzYjk5ZjIwOWNlMzcwZjUiLCJ1c2VybmFtZSI6IjEyMyIsInBhc3N3b3JkIjoiJDJhJDEwJGRFc0gySEUzQUVIRGNtNlU1SGd0THV4YWRyRlFoRzdSY3FQaHAydjFibFNub2xpWFZPeldpIiwiX192IjowLCJpYXQiOjE1ODMyNTc3MTcsImV4cCI6MTU4MzI1Nzc3N30.3832jmBdiJDCEWpA3z41GlB0c_0RcId2Gy5F3J1LuYk'
-            //         }
-            //     }
-            // }).then(
-            //     res => console.log(res.json()))
-            //     .then(data => console.log("data: = " + data))
-            //     .catch(err => console.log("err: = " + err));
-        }
     get_cookie ( cookie_name )
     {
         let results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
@@ -40,7 +15,7 @@ class Header extends Component {
             return null;
     }
         render() {
-            if (this.get_cookie('Authorized') !== ''){
+            if (this.get_cookie('Authorized') !== null){
                 return (
                     <header className='header bg-secondary text-white'>
                         <div className="container">
@@ -59,7 +34,7 @@ class Header extends Component {
                                                         <Link  to='/'> <a className="nav-link text-white active" href="#">О нас</a></Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
+                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
@@ -72,7 +47,7 @@ class Header extends Component {
                                                         <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white active" href="#">Личный кабиней</a></Link>
+                                                        <Link to='/Personal'><a className="nav-link text-white active" href="#">Личный кабинет</a></Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
@@ -85,7 +60,7 @@ class Header extends Component {
                                                         <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
+                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link to='/Market'><a className="nav-link active text-white" href="#">Услуги</a></Link>
@@ -98,7 +73,7 @@ class Header extends Component {
                                                         <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
+                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
@@ -111,7 +86,7 @@ class Header extends Component {
                                                         <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
+                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
@@ -122,7 +97,7 @@ class Header extends Component {
                                     </nav>
                                 </div>
                                 <div className="col-lg-2">
-                                    <Link  to='/Logout'><button type="button " className="flex-column btn btn-primary btn-dark text-white btn-lg btn-block">Выйти</button></Link>
+                                    <Link  to='/Signout'><button type="button " className="flex-column btn btn-primary btn-dark text-white btn-lg btn-block">Выйти</button></Link>
                                 </div>
                             </div>
                         </div>
@@ -145,12 +120,6 @@ class Header extends Component {
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
                                                         <Link  to='/'> <a className="nav-link text-white active" href="#">О нас</a></Link>
-                                                    </li>
-                                                    <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабиней</a></Link>
-                                                    </li>
-                                                    <li className="nav-item">
-                                                        <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
                                                     </li>
                                                 </ul>
                                         </switch>
