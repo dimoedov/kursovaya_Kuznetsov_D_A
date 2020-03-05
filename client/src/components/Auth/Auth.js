@@ -36,11 +36,13 @@ class Auth extends Component{
         }).then(res => res.json())
             .then(data => this.setState({serverOtvet: data}))
             .catch(err => console.log("err: =" + err));
-        console.log(this.state.serverOtvet);
     };
     render() {
         if (this.state.serverOtvet.success){
-            return <Redirect to='/Personal'/>;
+
+            return(
+                    <Redirect to='/Personal' {}/>
+                );
         }else {
             return (
                 <div>

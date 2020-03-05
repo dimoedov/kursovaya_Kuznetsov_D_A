@@ -9,21 +9,16 @@ class Signout extends Component {
             serverOtvet: ''
         }
     }
-    eraseCookie(name) {
-        document.cookie = name+'=; Max-Age=-99999999;';
-    }
     handleSubmit = e => {
         e.preventDefault();
 
         fetch('/api/signout').then(res => res.json())
             .then(data => this.setState({serverOtvet: data}))
             .catch(err => console.log("err: =" + err));
-        console.log(this.state.serverOtvet.success);
     };
 
     render() {
             if (this.state.serverOtvet.success){
-                this.eraseCookie('Authorized');
                 return <Redirect to='/'/>;
             }else {
                 return (

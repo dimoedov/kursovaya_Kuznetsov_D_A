@@ -4,7 +4,7 @@ let express = require('express');
 let jwt = require('jsonwebtoken');
 let router = express.Router();
 let User = require("../models/user");
-let Book = require("../models/book");
+let CarFix = require("../models/carfix");
 
 router.post('/signup', function(req, res) {
   if (!req.body.username || !req.body.password) {
@@ -56,33 +56,33 @@ router.get('/signout', function(req, res) {
   res.json({success: true, msg: 'signout'});
 });
 
-router.post('/book', function(req, res) {
+router.post('/CarFix', function(req, res) {
   let token = req.cookies;
   if (token) {
-    let newBook = new Book({
+    let newCarFix = new CarFix({
       isbn: req.body.isbn,
       title: req.body.title,
       author: req.body.author,
       publisher: req.body.publisher
     });
 
-    newBook.save(function(err) {
+    newCarFix.save(function(err) {
       if (err) {
-        return res.json({success: false, msg: 'Save book failed.'});
+        return res.json({success: false, msg: 'Save CarFix failed.'});
       }
-      res.json({success: true, msg: 'Successful created new book.'});
+      res.json({success: true, msg: 'Successful created new CarFix.'});
     });
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
   }
 });
 
-router.get('/book', function(req, res) {
+router.get('/CarFix', function(req, res) {
   let token = req.cookies;
   if (token) {
-    Book.find(function (err, books) {
+    CarFix.find(function (err, CarFixs) {
       if (err) return next(err);
-      res.json(books);
+      res.json(CarFixs);
     });
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});

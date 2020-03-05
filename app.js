@@ -6,7 +6,6 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let morgan = require('morgan');
 let mongoose = require('mongoose');
-let passport = require('passport');
 let cors = require('cors');
 let config = require('./config/database');
 

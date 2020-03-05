@@ -3,6 +3,7 @@ import './Header.css';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link, Route } from 'react-router-dom';
+import {hot} from 'react-hot-loader';
 
 class Header extends Component {
     get_cookie ( cookie_name )
@@ -136,4 +137,4 @@ class Header extends Component {
         }
 
 }
-export default Header;
+export default hot(module)(Header);
