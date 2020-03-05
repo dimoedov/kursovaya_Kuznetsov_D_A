@@ -1,7 +1,5 @@
 let mongoose = require('mongoose');
-let passport = require('passport');
 let config = require('../config/database');
-require('../config/passport')(passport);
 let express = require('express');
 let jwt = require('jsonwebtoken');
 let router = express.Router();
@@ -43,8 +41,9 @@ router.post('/signin', function(req, res) {
             expiresIn: 60 // 1 min
           });
           // return the information including token as JSON
-          res.cookie('Authorized','JWT '+token);
+          res.cookie('Authorized',token);
           res.json({success: true, token: 'JWT ' + token});
+          console.log(req.cookies);
         } else {
           res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
         }
@@ -52,15 +51,14 @@ router.post('/signin', function(req, res) {
     }
   });
 });
-router.get('/signout', passport.authenticate('jwt', { session: false}), function(req, res) {
-  req.logout();
-  res.json({success: true, msg: 'Sign out successfully.'});
+router.get('/signout', function(req, res) {
+  req.clearCookie;
+  res.json({success: true, msg: 'signout'});
 });
 
-router.post('/book', passport.authenticate('jwt', { session: false}), function(req, res) {
-  let token = getToken(req.headers);
+router.post('/book', function(req, res) {
+  let token = req.cookies;
   if (token) {
-    console.log(req.body);
     let newBook = new Book({
       isbn: req.body.isbn,
       title: req.body.title,
@@ -79,8 +77,8 @@ router.post('/book', passport.authenticate('jwt', { session: false}), function(r
   }
 });
 
-router.get('/book', passport.authenticate('jwt', { session: false}), function(req, res) {
-  let token = getToken(req.headers);
+router.get('/book', function(req, res) {
+  let token = req.cookies;
   if (token) {
     Book.find(function (err, books) {
       if (err) return next(err);
@@ -90,18 +88,5 @@ router.get('/book', passport.authenticate('jwt', { session: false}), function(re
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
   }
 });
-
-getToken = function (headers) {
-  if (headers && headers.authorization) {
-    let parted = headers.authorization.split(' ');
-    if (parted.length === 2) {
-      return parted[1];
-    } else {
-      return null;
-    }
-  } else {
-      return null;
-  }
-};
 
 module.exports = router;

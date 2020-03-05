@@ -126,7 +126,7 @@ class Header extends Component {
                                     </nav>
                                 </div>
                                 <div className="col-lg-2">
-                                    <Link  to='/Auth'><button type="button " className="flex-column btn btn-primary btn-dark text-white btn-lg btn-block">Выйти</button></Link>
+                                    <Link  to='/Auth'><button type="button " className="flex-column btn btn-primary btn-dark text-white btn-lg btn-block">Войти</button></Link>
                                 </div>
                             </div>
                         </div>

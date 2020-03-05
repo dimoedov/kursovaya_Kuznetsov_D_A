@@ -1,6 +1,6 @@
 let express = require('express');
 let path = require('path');
-let session = require("express-session");
+let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
@@ -23,32 +23,13 @@ app.set('view engine', 'jade');
 app.use(cors());
 
 // uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-// app.use(bodyParser);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(session({ secret: 'cats' }));
 app.use(morgan('dev'));
-app.use(passport.initialize());
-app.use(passport.session());
-
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'ejs');
-// app.engine('ejs', require('ejs-locals'));
-// app.use(express.logger());
-// app.use(express.cookieParser());
-// app.use(express.bodyParser());
-// app.use(express.methodOverride());
-// app.use(express.session({ secret: 'keyboard cat' }));
-// app.use(flash());
-// // Initialize Passport!  Also use passport.session() middleware, to support
-// // persistent login sessions (recommended).
-// app.use(passport.initialize());
-// app.use(passport.session());
-// app.use(app.router);
-// app.use(express.static(__dirname + '/../../public'));
 
 app.get('/', function(req, res) {
   res.send('Page under construction.');

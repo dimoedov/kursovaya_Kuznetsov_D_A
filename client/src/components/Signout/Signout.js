@@ -15,9 +15,10 @@ class Signout extends Component {
     handleSubmit = e => {
         e.preventDefault();
 
-        fetch('/api/signout')
+        fetch('/api/signout').then(res => res.json())
             .then(data => this.setState({serverOtvet: data}))
             .catch(err => console.log("err: =" + err));
+        console.log(this.state.serverOtvet.success);
     };
 
     render() {
