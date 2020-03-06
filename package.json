@@ -18,10 +18,8 @@
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
-    "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "latest"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.1.1"

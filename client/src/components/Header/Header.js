@@ -3,7 +3,6 @@ import './Header.css';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link, Route } from 'react-router-dom';
-import {hot} from 'react-hot-loader';
 
 class Header extends Component {
     get_cookie ( cookie_name )
@@ -32,65 +31,65 @@ class Header extends Component {
                                             <Route exact path='/'>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
-                                                        <Link  to='/'> <a className="nav-link text-white active" href="#">О нас</a></Link>
+                                                        <Link className="nav-link text-white active" to='/' >О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
+                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
                                             <Route exact path='/Personal'>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
-                                                        <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
+                                                        <Link className="nav-link text-white"  to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white active" href="#">Личный кабинет</a></Link>
+                                                        <Link className="nav-link text-white active" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
+                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
                                             <Route exact path='/Market'>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
-                                                        <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
+                                                        <Link className="nav-link text-white" to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Market'><a className="nav-link active text-white" href="#">Услуги</a></Link>
+                                                        <Link className="nav-link active text-white" to='/Market'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
                                             <Route exact path='/register'>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
-                                                        <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
+                                                        <Link className="nav-link text-white" to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
+                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
                                             <Route exact path='/auth'>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
-                                                        <Link  to='/'> <a className="nav-link text-white" href="#">О нас</a></Link>
+                                                        <Link className="nav-link text-white" to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Personal'><a className="nav-link text-white" href="#">Личный кабинет</a></Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to='/Market'><a className="nav-link text-white" href="#">Услуги</a></Link>
+                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
@@ -120,7 +119,7 @@ class Header extends Component {
                                         <switch>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
-                                                        <Link  to='/'> <a className="nav-link text-white active" href="#">О нас</a></Link>
+                                                        <Link className="nav-link text-white active" to='/'>О нас</Link>
                                                     </li>
                                                 </ul>
                                         </switch>
@@ -137,4 +136,4 @@ class Header extends Component {
         }
 
 }
-export default hot(module)(Header);
+export default Header;

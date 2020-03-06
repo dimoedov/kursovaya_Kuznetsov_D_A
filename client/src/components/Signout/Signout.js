@@ -15,10 +15,12 @@ class Signout extends Component {
         fetch('/api/signout').then(res => res.json())
             .then(data => this.setState({serverOtvet: data}))
             .catch(err => console.log("err: =" + err));
+        console.log(this.state.serverOtvet);
     };
 
     render() {
             if (this.state.serverOtvet.success){
+                // document.cookie='Authorized=" ";expires=;-99999';
                 return <Redirect to='/'/>;
             }else {
                 return (

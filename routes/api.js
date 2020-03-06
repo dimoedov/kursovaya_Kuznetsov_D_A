@@ -52,7 +52,9 @@ router.post('/signin', function(req, res) {
   });
 });
 router.get('/signout', function(req, res) {
-  req.clearCookie;
+  res.cookie('Authorized',null,{
+    maxAge: 1
+  });
   res.json({success: true, msg: 'signout'});
 });
 

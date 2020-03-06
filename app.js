@@ -1,6 +1,5 @@
 let express = require('express');
 let path = require('path');
-let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
@@ -8,6 +7,7 @@ let morgan = require('morgan');
 let mongoose = require('mongoose');
 let cors = require('cors');
 let config = require('./config/database');
+let favicon = require('serve-favicon');
 
 mongoose.connect(config.database, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -21,8 +21,9 @@ app.set('view engine', 'jade');
 
 app.use(cors());
 
+
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,9 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 
-app.get('/', function(req, res) {
-  res.send('Page under construction.');
-});
+// app.get('/', express.static(__dirname+'client/public'));
 
 app.use('/api', api);
 

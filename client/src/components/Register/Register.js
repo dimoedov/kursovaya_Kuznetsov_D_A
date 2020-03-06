@@ -29,7 +29,7 @@ class Register extends Component {
         let passwordValid = this.state.passwordValid;
         switch(fieldName) {
             case 'username':
-                usernameValid = /^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}$/.test(value);
+                usernameValid = /^[a-zA-Z][a-zA-Z0-9-_.]{5,20}$/.test(value);
                 fieldValidationErrors.username = usernameValid ? '' : 'поле должно содержать 5-20 символов, которыми могут быть буквы и цифры, первый символ обязательно буква';
                 break;
             case 'password':

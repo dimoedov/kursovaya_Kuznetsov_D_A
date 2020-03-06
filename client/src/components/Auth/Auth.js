@@ -41,7 +41,7 @@ class Auth extends Component{
         if (this.state.serverOtvet.success){
 
             return(
-                    <Redirect to='/Personal' {}/>
+                    <Redirect to='/Personal' />
                 );
         }else {
             return (
@@ -70,7 +70,7 @@ class Auth extends Component{
                         </form>
                     </div>
                     <div className='text-center'>
-                        <Link to='/Register'> <a href="#">Нет аккаунта? Зарегистрируйтесь :)</a></Link>
+                        <Link to='/Register'> Нет аккаунта? Зарегистрируйтесь :)</Link>
                     </div>
                 </div>
 
