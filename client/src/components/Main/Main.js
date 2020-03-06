@@ -6,6 +6,7 @@ import Market from '../Market/Market'
 import Auth from '../Auth/Auth'
 import Register from '../Register/Register'
 import Signout from "../Signout/Signout";
+import FormList from "../FormList/FormList";
 function Main() {
     return (
         <main>
@@ -16,6 +17,7 @@ function Main() {
                 <Route path='/Personal' component={Personal}/>
                 <Route path='/Market' component={Market}/>
                 <Route path='/Signout' component={Signout}/>
+                <Route path='/FormList' component={FormList}/>
             </Switch>
         </main>
     );

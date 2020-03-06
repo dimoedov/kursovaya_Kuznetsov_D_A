@@ -37,7 +37,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
+                                                        <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
@@ -50,11 +50,11 @@ class Header extends Component {
                                                         <Link className="nav-link text-white active" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
+                                                        <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
-                                            <Route exact path='/Market'>
+                                            <Route exact path='/FormList'>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
                                                         <Link className="nav-link text-white" to='/'> О нас</Link>
@@ -63,7 +63,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link active text-white" to='/Market'>Услуги</Link>
+                                                        <Link className="nav-link active text-white" to='/FormList'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
@@ -76,7 +76,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
+                                                        <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>
@@ -89,7 +89,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Market'>Услуги</Link>
+                                                        <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
                                                     </li>
                                                 </ul>
                                             </Route>

@@ -29,7 +29,6 @@ router.post('/signin', function(req, res) {
     username: req.body.username
   }, function(err, user) {
     if (err) throw err;
-
     if (!user) {
       res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
     } else {
@@ -42,8 +41,8 @@ router.post('/signin', function(req, res) {
           });
           // return the information including token as JSON
           res.cookie('Authorized',token);
+          res.cookie('id',user._id);
           res.json({success: true, token: 'JWT ' + token});
-          console.log(req.cookies);
         } else {
           res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
         }
@@ -62,10 +61,11 @@ router.post('/CarFix', function(req, res) {
   let token = req.cookies;
   if (token) {
     let newCarFix = new CarFix({
-      isbn: req.body.isbn,
-      title: req.body.title,
-      author: req.body.author,
-      publisher: req.body.publisher
+      kind_of_work: req.body.kind_of_work,
+      service: req.body.service,
+      engineer: req.body.engineer,
+      customer: req.get_cookie('id'),
+      price: req.body.price
     });
 
     newCarFix.save(function(err) {
@@ -81,10 +81,10 @@ router.post('/CarFix', function(req, res) {
 
 router.get('/CarFix', function(req, res) {
   let token = req.cookies;
-  if (token) {
-    CarFix.find(function (err, CarFixs) {
+  if (token !== null) {
+    CarFix.find(function (err, CarFix) {
       if (err) return next(err);
-      res.json(CarFixs);
+      res.json(CarFix);
     });
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
