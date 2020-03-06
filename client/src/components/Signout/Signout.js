@@ -20,8 +20,7 @@ class Signout extends Component {
 
     render() {
             if (this.state.serverOtvet.success){
-                // document.cookie='Authorized=" ";expires=;-99999';
-                return <Redirect to='/'/>;
+                window.location.assign('http://localhost:3000/');
             }else {
                 return (
                     <form className="form-horizontal" onSubmit={this.handleSubmit}>

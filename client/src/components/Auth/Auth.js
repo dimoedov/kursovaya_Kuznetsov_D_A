@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 class Auth extends Component{
     constructor(props) {
@@ -15,8 +15,6 @@ class Auth extends Component{
         const name = e.target.name;
         const value = e.target.value;
         this.setState({[name]: value});
-            // ,
-            // () => { this.validateField(name, value) });
     };
     handleSubmit = (e) =>{
       e.preventDefault();
@@ -39,10 +37,7 @@ class Auth extends Component{
     };
     render() {
         if (this.state.serverOtvet.success){
-
-            return(
-                    <Redirect to='/Personal' />
-                );
+                window.location.assign('http://localhost:3000/Personal/');
         }else {
             return (
                 <div>

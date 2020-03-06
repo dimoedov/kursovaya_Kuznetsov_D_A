@@ -4,23 +4,23 @@ let Schema = mongoose.Schema;
 let CarFixSchema = new Schema({
   kind_of_work: {
     type: String,
-    required: true
+    required: false
   },
   service: {
     type: String,
-    required: true
+    required: false
   },
   engineer: {
     type: String,
-    required: true
+    required: false
   },
   customer: {
     type: String,
-    required: true
+    required: false
   },
   price: {
     type: String,
-    required: true
+    required: false
   }
 });
 

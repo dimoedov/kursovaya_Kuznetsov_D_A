@@ -57,14 +57,17 @@ router.get('/signout', function(req, res) {
   res.json({success: true, msg: 'signout'});
 });
 
-router.post('/CarFix', function(req, res) {
-  let token = req.cookies;
-  if (token) {
+router.post('/carfix', function(req, res) {
+  // console.log(req);
+  console.log(req.cookies.id);
+  let token = req.cookies.Authorized;
+  console.log(token);
+  if (token !== null) {
     let newCarFix = new CarFix({
       kind_of_work: req.body.kind_of_work,
       service: req.body.service,
       engineer: req.body.engineer,
-      customer: req.get_cookie('id'),
+      customer: req.cookies.id,
       price: req.body.price
     });
 
@@ -79,10 +82,12 @@ router.post('/CarFix', function(req, res) {
   }
 });
 
-router.get('/CarFix', function(req, res) {
+router.get('/carfix', function(req, res) {
   let token = req.cookies;
   if (token !== null) {
-    CarFix.find(function (err, CarFix) {
+    CarFix.find({
+      customer: req.cookies.id
+    },function (err, CarFix) {
       if (err) return next(err);
       res.json(CarFix);
     });

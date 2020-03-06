@@ -1,73 +1,111 @@
 import React, { Component } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
+import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-
+import { Link } from 'react-router-dom';
+const { ExportCSVButton } = CSVExport;
+const MyExportCSV = (props) => {
+    const handleClick = () => {
+        props.onExport();
+    };
+    return (
+        <div>
+            <button className="btn btn-success" onClick={ handleClick }>Export to CSV</button>
+        </div>
+    );
+};
+const selectRow = {
+    mode: 'checkbox',
+    clickToSelect: true
+};
 class FormList extends Component {
+
     state = {
         products: [],
         columns: [
             {
                 dataField: '_id',
                 text: 'Product ID',
-                sort: true
+                sort: true,
+                footer: ''
             },
             {
                 dataField: 'kind_of_work',
                 text: 'kind of work',
                 sort: true,
+                footer: ''
             }, {
                 dataField: 'service',
                 text: 'Product service',
                 sort: true,
+                footer: ''
             }, {
                 dataField: 'engineer',
                 text: 'Product engineer',
                 sort: true,
-            }, {
-                dataField: 'customer',
-                text: 'Product customer',
-                sort: true,
+                footer: ''
             }, {
                 dataField: 'price',
                 text: 'Product Price',
-                sort: true
-            }]
+                sort: true,
+                footer: columnData => columnData.reduce((acc, item) => parseInt(acc) + parseInt(item), 0)
+            }],
     };
 
     componentDidMount() {
-        fetch('/api/CarFix').then(res => res.json())
+        fetch('/api/carfix').then(res => res.json())
             .then(data => this.setState({products: data}))
             .catch(err => console.log("err: =" + err));
     }
-
+    handleGetSelectedData = () => {
+        console.log(this.node.selectionContext.selected);
+    };
+    handleDataChange = ({ dataSize }) => {
+        this.setState({ rowCount: dataSize });
+    };
     render() {
-        const expandRow = {
-            renderer: row => (
-                <div>
-                    <p>.....</p>
-                    <p>You can render anything here, also you can add additional data on every row object</p>
-                    <p>expandRow.renderer callback will pass the origin row object to you</p>
-                </div>
-            ),
-            showExpandColumn: true
-        };
         return (
             <div className="container" style={{ marginTop: 50 }}>
-                <BootstrapTable
-                    ref={ n => this.node = n }
-                    keyField='id'
-                    data={ this.state.products }
-                    columns={ this.state.columns }
-                    filter={ filterFactory() }
-                    pagination={ paginationFactory() }
-                    selectRow={ { mode: 'checkbox', clickToSelect: true } }
-                    expandRow={ expandRow }
-                    striped
-                    hover
+                <div>
+                    <ToolkitProvider
+                        keyField="id"
+                        data={ this.state.products }
+                        columns={ this.state.columns }
+                        exportCSV={ {
+                            ignoreFooter: false
+                        } }
+                    >
+                        {
+                            props => (
+                                <div>
+                                    <div className='btn-group'>
+                                        <Link to='/Personal'><button className="btn btn-primary">Add Row</button></Link>
+                                        <MyExportCSV  { ...props.csvProps }>Export CSV!!</MyExportCSV >
+                                        <button className="btn btn-secondary" onClick={ this.handleGetSelectedData }>Get Current Selected Rows</button>
+                                    </div>
+                                    <hr />
+                                    <h5>Row Count:<span className="badge">{ this.state.rowCount }</span></h5>
+                                    <BootstrapTable
+                                        onDataSizeChange={ this.handleDataChange }
+                                        ref={ n => this.node = n }
+                                        keyField='id'
+                                        data={ this.state.products }
+                                        columns={ this.state.columns }
+                                        filter={ filterFactory() }
+                                        selectRow={ selectRow }
+                                        pagination={ paginationFactory() }
+                                        striped
+                                        hover
+                                        noDataIndication="Table is Empty"
+                                    />
+                                </div>
+                            )
+                        }
+                    </ToolkitProvider>
+                </div>
 
-                    noDataIndication="Table is Empty"
-                />
+
             </div>
         );
     }

@@ -34,7 +34,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white active" to='/' >О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Добавление услуги</Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
@@ -47,7 +47,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white"  to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white active" to='/Personal'>Личный кабинет</Link>
+                                                        <Link className="nav-link text-white active" to='/Personal'>Добавление услуги</Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
@@ -60,7 +60,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white" to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Добавление услуги</Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link className="nav-link active text-white" to='/FormList'>Услуги</Link>
@@ -73,7 +73,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white" to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Добавление услуги</Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
@@ -86,7 +86,7 @@ class Header extends Component {
                                                         <Link className="nav-link text-white" to='/'> О нас</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link className="nav-link text-white" to='/Personal'>Личный кабинет</Link>
+                                                        <Link className="nav-link text-white" to='/Personal'>Добавление услуги</Link>
                                                     </li>
                                                     <li className="nav-item">
                                                         <Link className="nav-link text-white" to='/FormList'>Услуги</Link>
