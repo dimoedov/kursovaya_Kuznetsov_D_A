@@ -58,7 +58,6 @@ router.get('/signout', function(req, res) {
 });
 
 router.post('/carfix', function(req, res) {
-  // console.log(req);
   console.log(req.cookies.id);
   let token = req.cookies.Authorized;
   console.log(token);

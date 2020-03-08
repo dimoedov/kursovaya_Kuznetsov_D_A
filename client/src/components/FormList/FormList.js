@@ -3,8 +3,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-import { Link } from 'react-router-dom';
-const { ExportCSVButton } = CSVExport;
+import { Link, Redirect } from 'react-router-dom';
 const MyExportCSV = (props) => {
     const handleClick = () => {
         props.onExport();
@@ -15,40 +14,58 @@ const MyExportCSV = (props) => {
         </div>
     );
 };
+const get_cookie = ( cookie_name ) =>
+{
+    let results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+
+    if ( results )
+        return ( unescape ( results[2] ) );
+    else
+        return null;
+};
 const selectRow = {
     mode: 'checkbox',
-    clickToSelect: true
+    clickToSelect: true,
+    bgColor: '#8f0008',
+    TextColor: 'white'
 };
 class FormList extends Component {
+
 
     state = {
         products: [],
         columns: [
             {
                 dataField: '_id',
-                text: 'Product ID',
+                isKey: true,
+                text: 'Номер услуги',
                 sort: true,
+                selected: false,
                 footer: ''
             },
             {
                 dataField: 'kind_of_work',
-                text: 'kind of work',
+                text: 'Вид работы',
                 sort: true,
+                selected: false,
                 footer: ''
             }, {
                 dataField: 'service',
-                text: 'Product service',
+                text: 'Услуга',
                 sort: true,
+                selected: false,
                 footer: ''
             }, {
                 dataField: 'engineer',
-                text: 'Product engineer',
+                text: 'Работник',
                 sort: true,
-                footer: ''
+                selected: false,
+                footer: 'Общая цена:'
             }, {
                 dataField: 'price',
-                text: 'Product Price',
+                text: 'Цена услуги',
                 sort: true,
+                selected: false,
                 footer: columnData => columnData.reduce((acc, item) => parseInt(acc) + parseInt(item), 0)
             }],
     };
@@ -58,18 +75,22 @@ class FormList extends Component {
             .then(data => this.setState({products: data}))
             .catch(err => console.log("err: =" + err));
     }
-    handleGetSelectedData = () => {
-        console.log(this.node.selectionContext.selected);
+    handleGetSelectedData = (node) => {
+        console.log(node.SelectionContext.selected);
     };
     handleDataChange = ({ dataSize }) => {
         this.setState({ rowCount: dataSize });
     };
     render() {
+        console.log(this.state.columns);
+        if (get_cookie('Authorized') === null){
+            return <Redirect to="/" />;
+        }else
         return (
             <div className="container" style={{ marginTop: 50 }}>
                 <div>
                     <ToolkitProvider
-                        keyField="id"
+                        keyField={'_id'}
                         data={ this.state.products }
                         columns={ this.state.columns }
                         exportCSV={ {
@@ -89,15 +110,15 @@ class FormList extends Component {
                                     <BootstrapTable
                                         onDataSizeChange={ this.handleDataChange }
                                         ref={ n => this.node = n }
-                                        keyField='id'
+                                        keyField={'_id'}
                                         data={ this.state.products }
                                         columns={ this.state.columns }
                                         filter={ filterFactory() }
                                         selectRow={ selectRow }
                                         pagination={ paginationFactory() }
-                                        striped
                                         hover
                                         noDataIndication="Table is Empty"
+                                        { ...props.baseProps }
                                     />
                                 </div>
                             )

@@ -1,6 +1,16 @@
 import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 
+const get_cookie = ( cookie_name ) =>
+{
+    var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+
+    if ( results )
+        return ( unescape ( results[2] ) );
+    else
+        return null;
+};
+
 class Signout extends Component {
 
     constructor(props) {
@@ -19,9 +29,10 @@ class Signout extends Component {
     };
 
     render() {
-            if (this.state.serverOtvet.success){
-                window.location.assign('http://localhost:3000/');
-            }else {
+        if (this.state.serverOtvet.success) window.location.assign('http://localhost:3000/');
+        if (get_cookie('Authorized') === null){
+            return <Redirect to="/" />;
+        }else {
                 return (
                     <form className="form-horizontal" onSubmit={this.handleSubmit}>
                         <h1 className='text-danger'>Вы уверены что хотете выйти?</h1>

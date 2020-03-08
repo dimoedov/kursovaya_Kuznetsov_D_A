@@ -1,5 +1,16 @@
 import React, {Component} from 'react';
 import {Link, Redirect} from "react-router-dom";
+
+const get_cookie = ( cookie_name ) =>
+{
+    var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+
+    if ( results )
+        return ( unescape ( results[2] ) );
+    else
+        return null;
+};
+
 class Personal extends Component{
     constructor(props) {
         super(props);
@@ -41,6 +52,9 @@ class Personal extends Component{
             .catch(err => console.log("err: =" + err));
     };
     render() {
+        if (get_cookie('Authorized') === null){
+            return <Redirect to="/" />;
+        }else
         if (this.state.serverOtvet.success){
             return (<Redirect to="/FormList"/>);
         }else {
