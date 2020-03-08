@@ -4,6 +4,7 @@ import ToolkitProvider, { CSVExport } from 'react-bootstrap-table2-toolkit';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import { Link, Redirect } from 'react-router-dom';
+let csvContent = "data:text/csv;charset=utf-8,%EF%BB%BF";
 const MyExportCSV = (props) => {
     const handleClick = () => {
         props.onExport();
@@ -94,7 +95,11 @@ class FormList extends Component {
                         data={ this.state.products }
                         columns={ this.state.columns }
                         exportCSV={ {
-                            ignoreFooter: false
+                            fileName: Date()+'.csv',
+                            separator: "    ",
+                            ignoreFooter: false,
+                            noAutoBOM: false,
+                            blobType: 'text/csv; charset = геа-8'
                         } }
                     >
                         {
