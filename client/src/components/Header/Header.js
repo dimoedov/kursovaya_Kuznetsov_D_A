@@ -8,7 +8,6 @@ class Header extends Component {
     get_cookie ( cookie_name )
     {
         let results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
-        console.log('Cookie = '+results);
         if ( results )
             return ( unescape ( results[2] ) );
         else

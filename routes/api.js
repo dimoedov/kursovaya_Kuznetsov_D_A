@@ -58,9 +58,7 @@ router.get('/signout', function(req, res) {
 });
 
 router.post('/carfix', function(req, res) {
-  console.log(req.cookies.id);
   let token = req.cookies.Authorized;
-  console.log(token);
   if (token !== null) {
     let newCarFix = new CarFix({
       kind_of_work: req.body.kind_of_work,
@@ -92,6 +90,20 @@ router.get('/carfix', function(req, res) {
     });
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
+  }
+});
+
+router.delete('/carfix/:id', function (req, res) {
+  let token = req.cookies.Authorized;
+  if (token !== null) {
+    CarFix.delete({
+      _id: ObjectId(req.params.id)
+    },function(err){
+      if (err) {
+        return res.json({success: false, msg: 'Delete CarFix failed.'});
+      }
+      res.json({success: true, msg: 'Successful Delete '+req.params.id});
+    })
   }
 });
 

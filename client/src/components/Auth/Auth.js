@@ -25,7 +25,7 @@ class Auth extends Component{
             formBody.push(encodedKey + "=" + encodedValue);
         }
         formBody = formBody.join("&");
-        fetch('/api/signin', {
+        fetch('/api/carfix/', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
