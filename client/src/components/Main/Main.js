@@ -1,5 +1,5 @@
-import { Switch, Route } from 'react-router-dom'
-import React from 'react';
+import {Switch, Route, BrowserRouter} from 'react-router-dom'
+import React, {Suspense} from 'react';
 import Home from '../Home/Home'
 import Personal from '../Personal/Personal'
 import Auth from '../Auth/Auth'
@@ -11,15 +11,17 @@ import Error from "../Error/Error";
 function Main() {
     return (
         <main>
-            <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route path='/Auth' component={Auth}/>
-                <Route path='/Register' component={Register}/>
-                <Route path='/Personal' component={Personal}/>
-                <Route path='/Signout' component={Signout}/>
-                <Route path='/FormList' component={FormList}/>
-                <Route default component={Error} />
-            </Switch>
+                <Suspense fallback={<div>Загрузка...</div>}>
+                    <Switch>
+                        <Route exact path='/' component={Home}/>
+                        <Route path='/Auth' component={Auth}/>
+                        <Route path='/Register' component={Register}/>
+                        <Route path='/Personal' component={Personal}/>
+                        <Route path='/Signout' component={Signout}/>
+                        <Route path='/FormList' component={FormList}/>
+                        <Route path="*" component={Error} status={404}/>
+                    </Switch>
+                </Suspense>
         </main>
     );
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import Header from "./components/Header/Header";
+import Auth from "./components/Auth/Auth";
 
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+  const { getByText } = render(<Auth />);
+  const linkElement = getByText(/Email address/i);
   expect(linkElement).toBeInTheDocument();
 });

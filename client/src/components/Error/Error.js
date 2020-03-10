@@ -1,12 +1,14 @@
 import React, {Component} from "react";
-import err from './404 _ Not Found.html';
-let html = require('./404 _ Not Found.html');
-let template = { __html: html };
+import './Error.css'
 class Error extends Component {
+
     render() {
         return (
-            // <div dangerouslySetInnerHTML={template} />
-            <iframe src={html }></iframe>
+            <div className="er_404">
+                <div className="content">
+                    <a href="/">Перейти к главной странице</a>
+                </div>
+            </div>
         );
     }
 }
