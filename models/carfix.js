@@ -19,7 +19,7 @@ let CarFixSchema = new Schema({
     required: false
   },
   price: {
-    type: String,
+    type: Number,
     required: false
   }
 });

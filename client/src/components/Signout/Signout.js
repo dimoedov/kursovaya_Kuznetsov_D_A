@@ -12,7 +12,6 @@ const get_cookie = ( cookie_name ) =>
 };
 
 class Signout extends Component {
-
     constructor(props) {
         super(props);
         this.state= {
@@ -21,11 +20,9 @@ class Signout extends Component {
     }
     handleSubmit = e => {
         e.preventDefault();
-
         fetch('/api/signout').then(res => res.json())
             .then(data => this.setState({serverOtvet: data}))
             .catch(err => console.log("err: =" + err));
-        console.log(this.state.serverOtvet);
     };
 
     render() {

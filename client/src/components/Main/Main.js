@@ -6,6 +6,8 @@ import Auth from '../Auth/Auth'
 import Register from '../Register/Register'
 import Signout from "../Signout/Signout";
 import FormList from "../FormList/FormList";
+import Error from "../Error/Error";
+
 function Main() {
     return (
         <main>
@@ -16,6 +18,7 @@ function Main() {
                 <Route path='/Personal' component={Personal}/>
                 <Route path='/Signout' component={Signout}/>
                 <Route path='/FormList' component={FormList}/>
+                <Route default component={Error} />
             </Switch>
         </main>
     );

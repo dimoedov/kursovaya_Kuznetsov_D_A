@@ -40,7 +40,6 @@ class Personal extends Component{
             formBody.push(encodedKey + "=" + encodedValue);
         }
         formBody = formBody.join("&");
-        console.log(formBody);
         fetch('/api/carfix', {
             method: 'post',
             headers: {
@@ -67,8 +66,8 @@ class Personal extends Component{
                         <form className="form-horizontal" onSubmit={this.handleSubmit}>
                             <div className={`form-group input-group`}>
                                 <label htmlFor="kind_of_work">Вид работы</label><pre>            </pre>
-                                <select className="form-control" value={this.state.kind_of_work} onChange={this.handleChange}>
-                                    <option selected value="Диагностика">Диагностика</option>
+                                <select className="form-control" defaultValue={this.state.kind_of_work} onChange={this.handleChange}>
+                                    <option value="Диагностика">Диагностика</option>
                                     <option value="Слесарный ремонт">Слесарный ремонт</option>
                                     <option value="Кузовной ремонт">Кузовной ремонт</option>
                                     <option value="Шиномонтаж">Шиномонтаж</option>
@@ -77,7 +76,7 @@ class Personal extends Component{
                                 </select>
                             </div>
                             <div className={`form-group input-group`}>
-                                <label htmlFor="service">Наименование услуги </label><pre>  </pre>
+                                <label htmlFor="service">Наименование услуги </label><pre>   </pre>
                                 <input type="text" required className="form-control" name="service"
                                        placeholder="Услуга"
                                        value={this.state.service}
@@ -92,7 +91,7 @@ class Personal extends Component{
                             </div>
                             <div className={`form-group input-group`}>
                                 <label htmlFor="price">Цена</label><pre>                  </pre>
-                                <input type="text" required className="form-control" name="price"
+                                <input type="number" required className="form-control" name="price"
                                        placeholder="Цена услуги"
                                        value={this.state.price}
                                        onChange={this.handleUserInput}/>

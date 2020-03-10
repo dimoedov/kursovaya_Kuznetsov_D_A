@@ -93,18 +93,23 @@ router.get('/carfix', function(req, res) {
   }
 });
 
-router.delete('/carfix/:id', function (req, res) {
+router.delete('/carfix/delete/:id', function (req, res) {
+  console.log('body = '+req.body.selected);
+let mass = req.body.selected.split(',');
+console.log(mass);
   let token = req.cookies.Authorized;
+
   if (token !== null) {
-    CarFix.delete({
-      _id: ObjectId(req.params.id)
-    },function(err){
-      if (err) {
-        return res.json({success: false, msg: 'Delete CarFix failed.'});
-      }
-      res.json({success: true, msg: 'Successful Delete '+req.params.id});
-    })
-  }
+      CarFix.deleteMany({
+        _id: mass
+      }, function (err) {
+        if (err) {
+          return res.json({success: false, msg: 'Delete CarFix failed.'});
+        } else {
+          return res.json({success: true, msg: 'Successful Delete ' + req.params.id});
+        }
+      })
+    }
 });
 
 module.exports = router;

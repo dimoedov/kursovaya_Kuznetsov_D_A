@@ -25,7 +25,7 @@ class Auth extends Component{
             formBody.push(encodedKey + "=" + encodedValue);
         }
         formBody = formBody.join("&");
-        fetch('/api/carfix/', {
+        fetch('/api/signin/', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -37,7 +37,7 @@ class Auth extends Component{
     };
     render() {
         if (this.state.serverOtvet.success){
-                window.location.assign('http://localhost:3000/Personal/');
+                return window.location.assign('http://localhost:3000/Personal/');
         }else {
             return (
                 <div>

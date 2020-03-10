@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb1365a-3513-48fa-b81a-a1112417be30" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/FormList/FormList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/FormList/FormList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Personal/Personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Personal/Personal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
-    </list>
+    <list default="true" id="0bb1365a-3513-48fa-b81a-a1112417be30" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +97,7 @@
       <workItem from="1583657542597" duration="4345000" />
       <workItem from="1583666225295" duration="1621000" />
       <workItem from="1583773045224" duration="3072000" />
+      <workItem from="1583861913920" duration="55000" />
     </task>
     <servers />
   </component>

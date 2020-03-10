@@ -71,22 +71,27 @@ class FormList extends Component {
             .catch(err => console.log("err: =" + err));
     }
     handleGetSelectedData = () => {
-        // console.log(this.state.selected);
-        let formBody = [];
-        for (let prop in this.state) {
-            let encodedKey = encodeURIComponent(prop);
-            let encodedValue = encodeURIComponent(this.state[prop]);
-            formBody.push(encodedKey + "=" + encodedValue);
+        if (window.confirm('Вы действительно хотите удалить?')){
+            let formBody = [];
+            for (let prop in this.state) {
+                let encodedKey = encodeURIComponent(prop);
+                let encodedValue = encodeURIComponent(this.state[prop]);
+                formBody.push(encodedKey + "=" + encodedValue);
+            }
+            formBody = formBody.join("&");
+            fetch('/api/carfix/delete/'+this.state.selected, {
+                method: 'delete',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body:formBody
+            }).then(res => res.json())
+                .then(data => this.setState({serverOtvet: data}))
+                .catch(err => console.log("err: =" + err))
+                .then(del =>  window.location.assign('http://localhost:3000/FormList'));
+
         }
-        fetch('/api/carfix/?id='+this.state.selected, {
-            method: 'delete',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: formBody
-        }).then(res => res.json())
-            .then(data => this.setState({serverOtvet: data}))
-            .catch(err => console.log("err: =" + err));
+
     };
     handleDataChange = ({ dataSize }) => {
         this.setState({ rowCount: dataSize });
@@ -170,7 +175,7 @@ class FormList extends Component {
                                     <h5>Row Count:<span className="badge">{ this.state.rowCount }</span></h5>
                                     <BootstrapTable
                                         onDataSizeChange={ this.handleDataChange }
-                                        ref={ n => this.node = n }
+                                        // ref={ n => this.node = n }
                                         keyField={'_id'}
                                         data={ this.state.products }
                                         columns={ this.state.columns }
