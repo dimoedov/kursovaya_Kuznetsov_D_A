@@ -60,7 +60,7 @@ class Personal extends Component{
             return (
                 <div>
                     <div>
-                        <h1 className='text-center text-dark'>Добавление услуги</h1>
+                        <h1 data-testid={'greeting-text'} className='text-center text-dark'>Добавление услуги</h1>
                     </div>
                     <div>
                         <form className="form-horizontal" onSubmit={this.handleSubmit}>

@@ -47,15 +47,15 @@ class Auth extends Component{
                     <div>
                         <form className="form-horizontal" onSubmit={this.handleSubmit}>
                             <div className={`form-group`}>
-                                <label htmlFor="username">Email address</label>
-                                <input type="username" required className="form-control" name="username"
+                                <label htmlFor="username">Username:</label>
+                                <input type="username" data-testid={'username'}  required className="form-control" name="username"
                                        placeholder="username"
                                        value={this.state.username}
                                        onChange={this.handleUserInput}/>
                             </div>
                             <div className={`form-group`}>
                                 <label htmlFor="password">Password:</label>
-                                <input type="password" required className="form-control" name="password"
+                                <input type="password" data-testid={'password'} required className="form-control" name="password"
                                        placeholder="Password"
                                        value={this.state.password}
                                        onChange={this.handleUserInput}/>

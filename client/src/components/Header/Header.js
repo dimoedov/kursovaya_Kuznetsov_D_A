@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Switch} from 'react-router-dom'
 import './Header.css';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -26,7 +27,7 @@ class Header extends Component {
                                 </div>
                                 <div className="col-lg-8">
                                     <nav className="topnav">
-                                        <switch>
+                                        <Switch>
                                             <Route exact path='/'>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
@@ -92,7 +93,7 @@ class Header extends Component {
                                                     </li>
                                                 </ul>
                                             </Route>
-                                        </switch>
+                                        </Switch>
                                     </nav>
                                 </div>
                                 <div className="col-lg-2">
@@ -115,13 +116,11 @@ class Header extends Component {
                                 </div>
                                 <div className="col-lg-8">
                                     <nav className="topnav">
-                                        <switch>
                                                 <ul className="nav nav-pills">
                                                     <li className="nav-item">
                                                         <Link className="nav-link text-white active" to='/'>О нас</Link>
                                                     </li>
                                                 </ul>
-                                        </switch>
                                     </nav>
                                 </div>
                                 <div className="col-lg-2">

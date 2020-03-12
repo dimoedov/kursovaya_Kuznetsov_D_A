@@ -1,4 +1,4 @@
-import {Switch, Route, BrowserRouter} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import React, {Suspense} from 'react';
 import Home from '../Home/Home'
 import Personal from '../Personal/Personal'
