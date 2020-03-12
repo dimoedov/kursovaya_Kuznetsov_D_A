@@ -94,11 +94,8 @@ router.get('/carfix', function(req, res) {
 });
 
 router.delete('/carfix/delete/:id', function (req, res) {
-  console.log('body = '+req.body.selected);
 let mass = req.body.selected.split(',');
-console.log(mass);
   let token = req.cookies.Authorized;
-
   if (token !== null) {
       CarFix.deleteMany({
         _id: mass
@@ -110,6 +107,43 @@ console.log(mass);
         }
       })
     }
+});
+
+router.patch('/carfix/upgrade', function (req, res) {
+  let token = req.cookies.Authorized;
+  if (token !== null){
+    let id = req.body._id;
+    let query = {"_id": id};
+    let update = {kind_of_work: req.body.kind_of_work};
+    let options = {new: true};
+    let newCarFix = new CarFix({
+      kind_of_work: req.body.kind_of_work,
+      service: req.body.service,
+      engineer: req.body.engineer,
+      customer: req.cookies.id,
+      price: req.body.price
+    });
+    CarFix.findByIdAndUpdate(query,newCarFix,options,
+        // {_id  : req.params.id},
+        // {
+        //     kind_of_work: req.body.kind_of_work,
+        //     service: req.body.service,
+        //     engineer: req.body.engineer,
+        //     price: req.body.price
+        //   },
+        {useFindAndModify: false},
+        function (err, data) {
+          console.log(data);
+          console.log(err);
+          if (err) {
+        return res.json({success: false, msg: 'Update CarFix failed.'});
+      } else {
+        return res.json({success: true, msg: 'Successful Update ' + req.params.id});
+      }
+    });
+  }
+
+
 });
 
 module.exports = router;

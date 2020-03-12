@@ -37,7 +37,12 @@ class Auth extends Component{
     };
     render() {
         if (this.state.serverOtvet.success){
-                return window.location.assign('http://localhost:3000/Personal/');
+            return window.location.assign('http://localhost:3000/Personal/');
+            // return (
+            //     <div data-testid={'greeting-text'}>
+            //         ваш токен {this.state.serverOtvet}
+            //     </div>
+            // )
         }else {
             return (
                 <div>
