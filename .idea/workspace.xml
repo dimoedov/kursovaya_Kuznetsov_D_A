@@ -2,50 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb1365a-3513-48fa-b81a-a1112417be30" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Auth/Auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Error/404.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Error/Error.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Error/Error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/FormError/FormError.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/FormList/FormList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Main/Main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Market/Market.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Personal/Personal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Register/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Register/register.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Signout/Signout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/carfix.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/error.jade" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.jade" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout.jade" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kursovaya.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_client/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/app_client/src/components/Register/Register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,21 +49,18 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/kursovaya/client/build/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="eject" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/client/package.json" />
+    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="eject" />
+        <script value="start" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="start (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app_client/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -120,6 +79,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="stratServer" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app_server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="stratServer" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -132,11 +101,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start (2)" />
+        <item itemvalue="npm.stratServer" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.test" />
-        <item itemvalue="npm.eject" />
-        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -178,6 +147,7 @@
       <workItem from="1583861913920" duration="55000" />
       <workItem from="1583862444062" duration="4264000" />
       <workItem from="1584024690069" duration="19321000" />
+      <workItem from="1586122070141" duration="33000" />
     </task>
     <servers />
   </component>
@@ -196,29 +166,29 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="675" y="251" key="#start_(1)/0.0.1920.1080/1920.0.1600.900@0.0.1920.1080" timestamp="1583255243884" />
-    <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1584091561239">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1579" height="255" key="GridCell.Tab.0.bottom" timestamp="1586122293206">
+      <screen x="1920" y="0" width="1600" height="900" />
     </state>
     <state width="1899" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1600.900@0.0.1920.1080" timestamp="1584045867641" />
-    <state width="1579" height="110" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1583355399581" />
+    <state width="1579" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1586122293206" />
     <state width="1897" height="258" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584091561239" />
-    <state width="1897" height="258" key="GridCell.Tab.0.center" timestamp="1584091561239">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1579" height="255" key="GridCell.Tab.0.center" timestamp="1586122293206">
+      <screen x="1920" y="0" width="1600" height="900" />
     </state>
     <state width="1899" height="255" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1600.900@0.0.1920.1080" timestamp="1584045867641" />
-    <state width="1579" height="110" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1583355399580" />
+    <state width="1579" height="255" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1586122293206" />
     <state width="1897" height="258" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584091561239" />
-    <state width="1897" height="258" key="GridCell.Tab.0.left" timestamp="1584091561239">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1579" height="255" key="GridCell.Tab.0.left" timestamp="1586122293206">
+      <screen x="1920" y="0" width="1600" height="900" />
     </state>
     <state width="1899" height="255" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1600.900@0.0.1920.1080" timestamp="1584045867640" />
-    <state width="1579" height="110" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1583355399580" />
+    <state width="1579" height="255" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1586122293206" />
     <state width="1897" height="258" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584091561239" />
-    <state width="1897" height="258" key="GridCell.Tab.0.right" timestamp="1584091561239">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state width="1579" height="255" key="GridCell.Tab.0.right" timestamp="1586122293206">
+      <screen x="1920" y="0" width="1600" height="900" />
     </state>
     <state width="1899" height="255" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1600.900@0.0.1920.1080" timestamp="1584045867641" />
-    <state width="1579" height="110" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1583355399581" />
+    <state width="1579" height="255" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1600.900@1920.0.1600.900" timestamp="1586122293206" />
     <state width="1897" height="258" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1584091561239" />
     <state x="616" y="250" key="run.anything.popup" timestamp="1583298197252">
       <screen x="0" y="0" width="1920" height="1080" />

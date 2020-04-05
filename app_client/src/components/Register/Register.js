@@ -73,7 +73,7 @@ class Register extends Component {
             }).then(res => res.json())
                 .then(data => this.setState({serverOtvet: data}))
                 .catch(err => console.log("err: =" + err));
-        console.log(this.state.serverOtvet.success)
+            console.log(this.state.serverOtvet.success)
         } else{
             console.log('password = '+this.state.passwordValid+' login = '+this.state.usernameValid );
         }
@@ -82,49 +82,49 @@ class Register extends Component {
 
     render() {
         if (this.state.serverOtvet.success){
-                return <Redirect to='/Auth'/>;
+            return <Redirect to='/Auth'/>;
         }else{
             return (
                 <div>
-                    <div className="text-center">
-                        <h1> Регистарция:</h1>
-                    </div>
-                    <div>
-                        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-                            <div className="panel panel-default">
-                                <FormErrors formErrors={this.state.serverOtvet}/>
-                                <FormErrors formErrors={this.state.formErrors} />
-                            </div>
-                            <div className={`form-group ${this.errorClass(this.state.formErrors.username)}`}>
-                                <label htmlFor="username">Login:</label>
-                                <input type="username" required className="form-control" name="username"
-                                       placeholder="username"
-                                       value={this.state.username}
-                                       onChange={this.handleUserInput}  />
-                            </div>
-                            <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-                                <label htmlFor="password">Password:</label>
-                                <input type="password" required className="form-control" name="password"
-                                       placeholder="Password"
-                                       value={this.state.password}
-                                       onChange={this.handleUserInput}  />
-                            </div>
-                            <input type="submit" className="btn btn-dark btn-primary" onSubmit={this.handleSubmit} value='Отправить'/>
-                        </form>
-                    </div>
-                    <div className="register_text">
-                        <p className='text-info'>
-                            для регистрации:
-                            <li>укажите логин длинной от 5 символов</li>
-                            <li>укажите пароль как минимум с одной заглавной, <br/>
-                                одной прописной буквами и специальными символами <br/>
-                                длина паролья не меньше 8 символов
-                            </li>
-                        </p>
-                    </div>
+                <div className="text-center">
+                <h1> Регистарция:</h1>
+            </div>
+            <div>
+            <form className="form-horizontal" onSubmit={this.handleSubmit}>
+                <div className="panel panel-default">
+                <FormErrors formErrors={this.state.serverOtvet}/>
+            <FormErrors formErrors={this.state.formErrors} />
+            </div>
+            <div className={`form-group ${this.errorClass(this.state.formErrors.username)}`}>
+        <label htmlFor="username">Login:</label>
+            <input type="username" required className="form-control" name="username"
+            placeholder="username"
+            value={this.state.username}
+            onChange={this.handleUserInput}  />
+            </div>
+            <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+        <label htmlFor="password">Password:</label>
+            <input type="password" required className="form-control" name="password"
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.handleUserInput}  />
+            </div>
+            <input type="submit" className="btn btn-dark btn-primary" onSubmit={this.handleSubmit} value='Отправить'/>
+                </form>
                 </div>
+                <div className="register_text">
+                <p className='text-info'>
+                для регистрации:
+                <li>укажите логин длинной от 5 символов</li>
+            <li>укажите пароль как минимум с одной заглавной, <br/>
+            одной прописной буквами и специальными символами <br/>
+            длина паролья не меньше 8 символов
+            </li>
+            </p>
+            </div>
+            </div>
 
-            );
+        );
         }
 
     }
